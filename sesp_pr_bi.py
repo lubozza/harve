@@ -10,7 +10,7 @@ import json
 # Ler a tabela 'crimes' para um DataFrame pandas
 # df = con.execute("SELECT * FROM crimes").fetchdf()
 
-df = pd.read_csv("sesp_pr_bi.csv", encoding="utf-8")
+df = pd.read_csv("sesp_pr_bi.csv", sep=";", encoding="cp1252")
 
 df.columns = df.columns.str.strip().str.lower()
 
