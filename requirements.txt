@@ -2,4 +2,3 @@ pandas
 duckdb==0.9.2
 plotly.express
 streamlit
-json
