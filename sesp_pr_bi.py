@@ -116,7 +116,7 @@ def aplicar_filtros(df, filtros, ignorar=None):
 filtros_info = [
     ("ano", "Ano"),
     ("mes", "Mês"),
-    ("aisp", "AISP"),
+    ("aisp", "Áreas Integr. Seg. Pública - AISP"),
     ("municipio", "Município"),
     ("bairro", "Bairro"),
     ("natureza", "Natureza"),
