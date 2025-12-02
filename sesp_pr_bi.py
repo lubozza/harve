@@ -1,16 +1,16 @@
 import pandas as pd
-import duckdb
+# import duckdb
 import plotly.express as px
 import streamlit as st
 import json
 
 # Conectar ao banco DuckDB
-con = duckdb.connect("crimes.duckdb")
+# con = duckdb.connect("crimes.duckdb")
 
 # Ler a tabela 'crimes' para um DataFrame pandas
-df = con.execute("SELECT * FROM crimes").fetchdf()
+# df = con.execute("SELECT * FROM crimes").fetchdf()
 
-# df = pd.read_excel("bd_sesp_mv_19~25.xlsx")
+df = pd.read_csv("sesp_pr_bi.csv", sep=";", encoding="cp1252")
 
 df.columns = df.columns.str.strip().str.lower()
 
@@ -709,7 +709,7 @@ with aba2:
                         color="natureza")
     # Inverter ordem para mostrar o maior no topo
     fig_bairro_.update_layout(
-            yaxis=dict(categoryorder="total ascending", showgrid=False),
+            yaxis=dict(categoryorder="total descending", showgrid=False),
             xaxis=dict(showgrid=False),
             showlegend=False,
             plot_bgcolor="black",             # fundo da área do gráfico
@@ -963,12 +963,7 @@ with aba4:
 
 
 # Fechar conexão com o banco de dados
-con.close()
-
-
-
-
-
+# con.close()
 
 
 
