@@ -71,6 +71,23 @@ div[data-testid="stDataFrame"] {
 [data-testid="stHeader"] {
     background: rgba(0,0,0,0);
 }
+
+/* Altera a cor dos textos das st.tabs */
+div[data-testid="stTabs"] button {
+color: white; /* muda a cor do texto */
+}
+div[data-testid="stTabs"] button:hover {
+color: red; /* cor ao passar o mouse */
+}
+div[data-testid="stTabs"] button:focus {
+color: red; /* cor quando selecionada */
+}
+/* Altera a cor do texto das opções da st.radio*/
+div[data-testid="stRadio"] label {
+color: white;
+font-weight: bold;
+}
+            
 </style>
 """, unsafe_allow_html=True)
 
@@ -161,7 +178,7 @@ aba1, aba2, aba3, aba4 = st.tabs([
 
 with aba1:
     st.subheader("📈 Mortes - Histórico por Período")
-    st.write("👉 Incluir novos gráficos")
+    #st.write("👉 Incluir novos gráficos")
 
     #-----------------------------------------------------------------------------------------------------------
     # Gráfico - Quantidade de Crimes por Ano
@@ -188,6 +205,7 @@ with aba1:
         plot_bgcolor="black",             # fundo da área do gráfico
         paper_bgcolor="black",            # fundo externo
         font=dict(color="white"),         # texto branco
+        title=dict(x=0, font=dict(color="white")),
         # Ajuste dos eixos para remover linhas de grade
         xaxis=dict(showgrid=False),
         yaxis=dict(showgrid=False),
